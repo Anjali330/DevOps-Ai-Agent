@@ -5,7 +5,7 @@ import os
 import time
 from collector import collect_metrics, get_buffer
 from detector import detect_anomaly
-from reasoner import analyze_with_gemini
+from reasoner import analyze_with_ai
 
 st.set_page_config(page_title="DevOps AI Agent", layout="wide")
 st.title("DevOps AI Agent — Live Monitor")

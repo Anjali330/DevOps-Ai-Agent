@@ -1,7 +1,7 @@
 import time
 from collector import collect_metrics, get_buffer
 from detector import detect_anomaly
-from reasoner import analyze_with_gemini   # changed
+from reasoner import analyze_with_ai   # changed
 
 POLL_INTERVAL = 5
 COOLDOWN = 30
@@ -28,7 +28,7 @@ while True:
                     print(f"  -> {issue['message']}")
 
                 print("\nAsking Gemini for analysis...")
-                analysis = analyze_with_gemini(snapshot, issues, buffer)  # changed
+                analysis = analyze_with_ai(snapshot, issues, buffer)  # changed
 
                 if analysis:
                     print(f"\nSeverity : {analysis['severity'].upper()}")

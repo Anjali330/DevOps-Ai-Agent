@@ -1,4 +1,4 @@
-google-generativeai
+google-genai
 psutil
 scikit-learn
 numpy

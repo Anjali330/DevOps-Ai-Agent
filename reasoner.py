@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
-model = "gemini-2.0-flash"
+model = "gemini-2.5-flash"
 
 INCIDENTS_FILE = "data/incidents.json"
 
@@ -38,7 +38,7 @@ def get_similar_past_incidents(current_issues, n=3):
     ]
     return similar[-n:]
 
-def analyze_with_gemini(snapshot, issues, buffer):
+def analyze_with_ai(snapshot, issues, buffer):
     if not issues:
         return None
 
