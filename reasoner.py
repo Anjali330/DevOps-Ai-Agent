@@ -1,4 +1,4 @@
-import google.generativeai as genai
+import google.genai as genai
 import json
 import os
 from datetime import datetime
@@ -6,8 +6,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
-model = genai.GenerativeModel("gemini-1.5")
+client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
+model = "gemini-2.0-flash"
 
 INCIDENTS_FILE = "data/incidents.json"
 
@@ -77,7 +77,10 @@ Respond with a JSON object only (no markdown, no extra text, no backticks) with 
 }}"""
 
     try:
-        response = model.generate_content(prompt)
+        response = client.models.generate_content(
+            model=model,
+            contents=prompt
+        )
         raw = response.text.strip()
 
         # Strip markdown code fences if Gemini adds them anyway
