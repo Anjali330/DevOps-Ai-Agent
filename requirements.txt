@@ -1,0 +1,6 @@
+google-generativeai
+psutil
+scikit-learn
+numpy
+streamlit
+python-dotenv
